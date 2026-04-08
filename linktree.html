@@ -6,27 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zimaya Perfumes</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #1a1a1a; /* background luar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function showme() {
+            alert("Hallo Selamat Siang");
+            Swal.fire({
+                title: "Hallo!",
+                text: "Selamat Siang",
+                icon: "success"
+            });
+            console.log("Ini baris 18, sudah sampai disini");
+            a = 18 + 10;
+            console.log("Hasil Penjumlahan: " + a);
+            c = 1 * 2 * 3;
+            console.log("Hasil Perkalian : " + c);
         }
 
-       .container {
-    width: 100%;
-    max-width: 400px;
-    background: #000;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    color: #fff; 
-}
+        function changeTex() {
+            const element = document.getElementById("intro");
+            element.innerHTML = "Sistem Informasi ITS";
+        }
+
+        function changeStyle() {
+            const element = document.getElementById("tombol");
+            element.style.color = "red";
+            element.style.background = "yellow";
+        }
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #1a1a1a;
+            /* background luar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: #000;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
 
         .logo {
             width: 90px;
@@ -117,14 +147,15 @@
     </style>
 </head>
 
+
+
 <body>
     <div class="container">
-
         <div class="logo">
             <img src="images.png" alt="Zimaya Logo">
         </div>
 
-        <h2>@zimayaperfumes</h2>
+        <h2 id="intro" onclick="changeTex()">@zimayaperfumes</h2>
         <p>Where fragrant notes turn into stories.</p>
 
         <div class="socials">
@@ -134,7 +165,11 @@
             <img src="loho fb linktreee.png" alt="Facebook" style="width:24px; margin:0 8px;">
         </div>
 
-        <div class="section-title">OFFICIAL ZIMAYA WEBSITES</div>
+
+
+        <div id="tombol" class="section-title" onclick="changeStyle()">
+            OFFICIAL ZIMAYA WEBSITES
+        </div>
 
         <div class="link-card">
             <div class="left">
@@ -142,7 +177,7 @@
                     style="width:35px; height:35px; border-radius:50%; margin-right:10px; object-fit:cover;">
                 <span>UAE</span>
             </div>
-            <div class="dots">⋮</div>
+            <div class="dots" onclick="showme()">⋮</div>
         </div>
 
         <div class="link-card">
